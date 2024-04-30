@@ -1,0 +1,15 @@
+spring:
+  output:
+    ansi:
+      enabled: "always"
+  application:
+    name: "Spring bean injection demo"
+
+management:
+  output-user-service: "cloud"
+  persistence:
+    service: "json"
+
+logging:
+  level:
+    root: "INFO"
