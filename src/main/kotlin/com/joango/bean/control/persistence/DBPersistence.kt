@@ -2,45 +2,45 @@ package com.joango.bean.control.persistence
 
 import com.joango.bean.control.model.UserEntity
 import mu.KotlinLogging
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Service
+import kotlin.collections.List
 
 @ConditionalOnProperty(
     prefix = "management.persistence",
     name = ["service"],
-    havingValue = "json",
-    matchIfMissing = true
+    havingValue = "postgres",
+    matchIfMissing = false
 )
 @Service
-class JsonFileWriter: UserPersistence {
+class DBPersistence: UserPersistence {
 
     private val logger = KotlinLogging.logger {}
+    @Autowired
+    private lateinit var userRepository: UserRepository
 
     init {
-        logger.info { "Using json files repo" }
+        logger.info { "Using postgres repo" }
     }
 
     override fun add(): UserEntity {
-        //Add user on json file
-        return TODO("Provide the return value")
-    }
-
-    override fun update(): UserEntity {
-        //Update user on json file
-        return TODO("Provide the return value")
-    }
-
-    override fun getById(id: String): UserEntity {
-        //Get user by id on json file
-        return TODO("Provide the return value")
-    }
-
-    override fun getAll(): List<UserEntity> {
         TODO("Not yet implemented")
     }
 
+    override fun update(): UserEntity {
+        TODO("Not yet implemented")
+    }
+
+    override fun getById(id: String): UserEntity {
+        TODO("Not yet implemented")
+    }
+
+    override fun getAll(): List<UserEntity> {
+        return userRepository.findAll().toList()
+    }
+
     override fun delete(id: String) {
-        //Delete user by id on json file"
-        return TODO("Provide the return value")
+        TODO("Not yet implemented")
     }
 }

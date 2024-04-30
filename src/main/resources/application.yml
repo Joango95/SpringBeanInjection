@@ -4,11 +4,15 @@ spring:
       enabled: "always"
   application:
     name: "Spring bean injection demo"
+  datasource:
+    jdbc-url: "jdbc:postgresql://localhost:5432/spring-bean-injection-demo"
+    username: postgres
+    password: postgres
 
 management:
   output-user-service: "cloud"
   persistence:
-    service: "json"
+    service: "postgres"
 
 logging:
   level:
