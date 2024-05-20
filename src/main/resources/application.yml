@@ -12,7 +12,7 @@ spring:
 management:
   output-user-service: "cloud"
   persistence:
-    service: "postgres"
+    service: "json"
 
 logging:
   level:
