@@ -10,8 +10,7 @@ import kotlin.collections.List
 @ConditionalOnProperty(
     prefix = "management.persistence",
     name = ["service"],
-    havingValue = "postgres",
-    matchIfMissing = false
+    havingValue = "postgres"
 )
 @Service
 class DBPersistence: UserPersistence {
@@ -21,7 +20,7 @@ class DBPersistence: UserPersistence {
     private lateinit var userRepository: UserRepository
 
     init {
-        logger.info { "Using postgres repo" }
+        logger.info { "Using postgresDB repo" }
     }
 
     override fun add(): UserEntity {

@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service
 @ConditionalOnProperty(
     prefix = "management.persistence",
     name = ["service"],
-    havingValue = "json",
-    matchIfMissing = true
+    havingValue = "json"
 )
 @Service
 class JsonFileWriter: UserPersistence {
