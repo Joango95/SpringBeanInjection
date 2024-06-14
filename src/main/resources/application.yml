@@ -10,7 +10,7 @@ spring:
     password: postgres
 
 management:
-  notification-service: "email"
+  notification-service: "sms"
   persistence:
     service: "postgres"
 
