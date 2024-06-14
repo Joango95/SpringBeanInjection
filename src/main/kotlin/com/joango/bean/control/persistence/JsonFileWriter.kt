@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service
 @ConditionalOnProperty(
     prefix = "management.persistence",
     name = ["service"],
-    havingValue = "json",
-    matchIfMissing = true
+    havingValue = "json"
 )
 @Service
 class JsonFileWriter: UserPersistence {
@@ -35,9 +34,12 @@ class JsonFileWriter: UserPersistence {
         return TODO("Provide the return value")
     }
 
-    override fun delete(id: String) {
-        //Delete user by id on json file" +
+    override fun getAll(): List<UserEntity> {
+        TODO("Not yet implemented")
+    }
 
+    override fun delete(id: String) {
+        //Delete user by id on json file"
         return TODO("Provide the return value")
     }
 }
